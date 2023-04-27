@@ -1,14 +1,22 @@
-const USUARIO_NOMBRE_REGISTRADO =" pepitas "
-const USUARIO_CONTRASENA_REGISTRADA =" 123 "
-const USUARIO_NOMBRE_REGISTRADO_2 =" pepa "
-const USUARIO_CONTRASEÑA_REGISTRADA_2 =" abcd "
+const USUARIO_NOMBRE_REGISTRADO = "pepitas";
+const USUARIO_CONTRASENIA_REGISTRADA = "123";
+const USUARIO_NOMBRE_REGISTRADO_2 = "pepa";
+const USUARIO_CONTRASENIA_REGISTRADA_2 = "abcd";
 
-let usuarioNombreIngresado = prompt ("ingrese nombre");
-let usuarioContrasenaIngresada = prompt ("ingrese su contraseña");
+const inputUsuario = document.querySelector("#usuario-nombre");
+const inputContrasenia = document.querySelector("#usuario-contrasenia");
+const pResultado = document.querySelector("#resultado");
 
-if ((usuarioNombreIngresado == USUARIO_NOMBRE_REGISTRADO && usuarioContrasenaIngresada == USUARIO_CONTRASENA_REGISTRADA) || (usuarioNombreIngresado == USUARIO_NOMBRE_REGISTRADO_2 && usuarioContrasenaIngresada == USUARIO_CONTRASEÑA_REGISTRADA_2)) {
-document.write ("puede pasar");    
-}
-else {
-    document.write ("no puede pasar")
-}
+let usuarioNombreIngresado = "def nombre";
+let usuarioContraseniaIngresada = "def contrasenia";
+
+function verificar(){
+    usuarioNombreIngresado = inputUsuario.value;
+    usuarioContraseniaIngresada = inputContrasenia.value;
+    if ((usuarioNombreIngresado == USUARIO_NOMBRE_REGISTRADO && usuarioContraseniaIngresada == USUARIO_CONTRASENIA_REGISTRADA) || (usuarioNombreIngresado == USUARIO_NOMBRE_REGISTRADO_2 && usuarioContraseniaIngresada == USUARIO_CONTRASENIA_REGISTRADA_2)) {
+        pResultado.innerHTML = "usuario y contraseña correctos "+usuarioNombreIngresado;   
+    }else {
+        pResultado.innerHTML = "usuario y contraseña incorrectos";
+        pResultado.style.color = "red";
+    }
+ }
